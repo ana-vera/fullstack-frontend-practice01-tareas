@@ -1,8 +1,12 @@
 import {useState, useEffect} from 'react'
+import { useSelector,useDispatch } from 'react-redux'
 import { FaSignInAlt } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
-  
+    
+
+
     //que datos debemos pasarle al use state? debemos checar con nuestro backend
     const [formData, setFormData] = useState({
         name:'',
@@ -12,6 +16,12 @@ const Register = () => {
     })
   
     const {name, email, password, password2} = formData
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    
+    //desestructurando todos los elementos del state
+    const{user, isLoading, isError, isSuccess, message } = useSelector((state)=> state.auth)
 
     const onChange = (e) => {
         setFormData((prevState)=>({

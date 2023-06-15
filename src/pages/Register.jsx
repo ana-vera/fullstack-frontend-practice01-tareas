@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { FaLogin } from 'react-icons/fa'
+import { FaSignInAlt } from 'react-icons/fa'
 
 const Register = () => {
   
@@ -28,7 +28,7 @@ const Register = () => {
         <>
          <section className='heading'>
             <h4>
-                <FaUserAlt /> Login
+                <FaSignInAlt /> Login
             </h4>
             <p>
                 Please enter your information to create a new account
